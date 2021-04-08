@@ -59,7 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return faqData[section].bankTutorial.count
+        return faqData[section].bankTutorial.count + 1
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -130,7 +130,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if faqData.count != 0 {
             
-            let lastIndex = faqData[indexPath.section].bankTutorial.count - 1
+            let lastIndex = faqData[indexPath.section].bankTutorial.count
             
             if indexPath.row == 0 {
                 
@@ -171,7 +171,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 
                 stepCell.stepNo.text = String(indexPath.row) + "."
-                stepCell.step.text = faqData[indexPath.section].bankTutorial[indexPath.row]
+                stepCell.step.text = faqData[indexPath.section].bankTutorial[indexPath.row-1]
                 
                 stepCell.selectionStyle = .none
                 stepCell.clipsToBounds = true
@@ -182,7 +182,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 
                 firstCell.stepNo.text = String(indexPath.row) + "."
-                firstCell.step.text = faqData[indexPath.section].bankTutorial[indexPath.row]
+                firstCell.step.text = faqData[indexPath.section].bankTutorial[indexPath.row-1]
                 firstCell.selectionStyle = .none
                 
                 return firstCell
